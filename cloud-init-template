@@ -53,7 +53,7 @@ write_files:
 
         # Redis server configuration
         redis:
-            address: '%%REDIS_HOST%%:%%REDIS_PORT%%'
+            address: 'redis-19172.c251.east-us-mz.azure.cloud.redislabs.com:19172'
             tls:   
                 require: true
 

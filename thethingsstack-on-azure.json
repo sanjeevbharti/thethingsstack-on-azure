@@ -636,12 +636,6 @@
                 "description": "The fully qualified domain name of the server hosting the stack. Ex:  'myttn.francecentral.cloudapp.azure.com'"
               }
             },
-            "redisHost": {
-              "type": "string"
-            },
-            "redisPort": {
-              "type": "int"
-            },
             "redisPassword": {
               "type": "secureString"
             },
@@ -820,14 +814,6 @@
                     "value": "[parameters('fqdn')]"
                   },
                   {
-                    "name": "REDIS_HOST",
-                    "value": "[parameters('redisHost')]"
-                  },
-                  {
-                    "name": "REDIS_PORT",
-                    "value": "[string(parameters('redisPort'))]"
-                  },
-                  {
                     "name": "REDIS_PASSWORD",
                     "secureValue": "[parameters('redisPassword')]"
                   },
@@ -874,8 +860,7 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments', 'postgreSQLDeployment')]",
-        "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]",
-        "[resourceId('Microsoft.Resources/deployments', 'redisDeployment')]"
+        "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]"
       ]
     }
   ],
