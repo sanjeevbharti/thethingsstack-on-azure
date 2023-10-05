@@ -636,9 +636,6 @@
                 "description": "The fully qualified domain name of the server hosting the stack. Ex:  'myttn.francecentral.cloudapp.azure.com'"
               }
             },
-            "redisPassword": {
-              "type": "secureString"
-            },
             "psqlHost": {
               "type": "string"
             },
@@ -751,7 +748,7 @@
               "apiVersion": "2019-09-01",
               "name": "[format('{0}/REDIS-PASSWORD', format('{0}-kv', parameters('resourcesPrefix')))]",
               "properties": {
-                "value": "[parameters('redisPassword')]"
+                "value": "vhpdIQYUUYvbnyyO8ICzYEX6zifP8K4Q4AzCaFQEqJ0="
               },
               "dependsOn": [
                 "[resourceId('Microsoft.KeyVault/vaults', format('{0}-kv', parameters('resourcesPrefix')))]"
@@ -812,10 +809,6 @@
                   {
                     "name": "FQDN",
                     "value": "[parameters('fqdn')]"
-                  },
-                  {
-                    "name": "REDIS_PASSWORD",
-                    "secureValue": "[parameters('redisPassword')]"
                   },
                   {
                     "name": "PSQL_HOST",
