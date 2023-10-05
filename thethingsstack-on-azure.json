@@ -583,15 +583,6 @@
           "fqdn": {
             "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))).dnsSettings.fqdn]"
           },
-          "redisHost": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'redisDeployment'), '2019-10-01').outputs.redisHost.value]"
-          },
-          "redisPort": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'redisDeployment'), '2019-10-01').outputs.redisPort.value]"
-          },
-          "redisPassword": {
-            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'redisDeployment'), '2019-10-01').outputs.redisKey.value]"
-          },
           "psqlHost": {
             "value": "[reference(resourceId('Microsoft.Resources/deployments', 'postgreSQLDeployment'), '2019-10-01').outputs.fqdn.value]"
           },
